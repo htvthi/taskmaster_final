@@ -93,7 +93,10 @@
 
 
 </form>
-<div class="mt-4">
+            {{form.errors}}
+
+
+                    <div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Hast Du bereits einen Account? <a href="{% url 'login' %}" class="ml-2">Einloggen</a>
 					</div>
