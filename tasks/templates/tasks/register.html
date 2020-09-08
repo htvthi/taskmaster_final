@@ -1,8 +1,101 @@
-<h3> Register </h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <style>
+
+        h1{
+            font-family: Arial;
+            color: #696969;
+            text-align:center;
+        }
+
+        form {
+            border: 30px solid #F5FFFA;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        .log-button{
+            background-color: #555555;
+            border: none;
+            color: white;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+
+        .container {
+            padding: 16px;
+        }
+
+        label{
+            font-family: Arial;
+            color: #778899;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
 
 <form method="POST" action="">
-    {% csrf_token %}
-    {{form.as_p}}
 
-    <input type=""submit" name="Create User"></input>
+    {% csrf_token %}
+
+    <div class="container">
+        <h1> Registrierung </h1>
+        <label for="uname"><b>Benutzername</b></label>
+        {{form.username}}
+
+        <label for="email"><b>Email</b></label>
+        {{form.email}}
+
+        <label for="psw"><b>Passwort</b></label>
+        {{form.password1}}
+
+        <label for="psw"><b>Passwort wiederholen</b></label>
+        {{form.password2}}
+
+        <input type="submit" name="Create User"></input>
+
+    </div>
+
+
 </form>
+
+</body>
+</html>
+</body>
+</html>
+

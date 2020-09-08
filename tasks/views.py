@@ -5,6 +5,7 @@ from .models import *
 from.forms import *
 
 from django.contrib.auth.forms import UserCreationForm
+from .forms import CreateUserForm
 
 # Create your views here.
 
@@ -47,10 +48,10 @@ def deleteTask(request, pk):
     return render(request, 'tasks/delete.html', context)
 
 def registerPage(request):
-    form = UserCreationForm()
+    form = CreateUserForm()
     
     if request.method =="POST":
-        form = UserCreationForm(request.POST)
+        form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
     
