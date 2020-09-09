@@ -1,9 +1,74 @@
-<p>Are you sure about deleting the task "{{item}}" ?</p>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
 
-<a href="{%url 'home' %}">Cancel</a>
+    <style>
+
+        h1{
+            font-family: Arial;
+            color: #696969;
+            text-align:center;
+        }
+
+        form {
+            border: 30px solid #F5FFFA;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        .log-button{
+            background-color: #555555;
+            border: none;
+            color: white;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        label{
+            font-family: Arial;
+            color: #778899;
+        }
+        .account{
+            font-family: Arial;
+            color: #696969;
+            text-align:center
+        }
+
+
+    </style>
+</head>
+<body>
+
 
 <form method="POST" action="">
+    <div class="container">
+        <h1>Löschen</h1>
     {% csrf_token %}
-    <input type="submit" name "confirm">
-
+    <input class ="log-button" type="submit" name=""confirm>
+    </div>
 </form>
+<div class="account">
+<p> "{{item}}" doch nicht löschen?</p>
+<a href="{%url 'home' %}">Zurück</a></div>
+</body>
+</html>

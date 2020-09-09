@@ -1,112 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+	<meta charset="UTF-8">
+	<title>Login</title>
 
-    <style>
-        form {
-            border: 30px solid #F5FFFA;
-        }
+	<style>
+		form {
+			border: 30px solid #F5FFFA;
+		}
 
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            font-family: Arial;
-        }
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			font-family: Arial;
+		}
 
-        .log-button{
-            background-color: #555555;
-            border: none;
-            color: white;
-            width:100%;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            padding: 14px 20px;
-            margin: 8px 0;
-            cursor: pointer;
-        }
-
-
-        .container {
-            padding: 16px;
-        }
-
-        label{
-            font-family: Arial;
-            color: #778899;
-        }
-
-        span.psw {
-            float: right;
-            padding-top: 16px;
-        }
-
-        .button{
-            background-color: #555555;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
+		.log-button{
+			background-color: #555555;
+			border: none;
+			color: white;
+			width:100%;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			padding: 14px 20px;
+			margin: 8px 0;
+			cursor: pointer;
+		}
 
 
-        h1{
-            font-family: Arial;
-            color: #696969;
-            text-align:center;
-        }
+		.container {
+			padding: 16px;
+		}
+
+		label{
+			font-family: Arial;
+			color: #778899;
+		}
 
 
-    </style>
+		.account{
+			font-family: Arial;
+			color: #696969;
+			text-align:center
+		}
+
+
+		h1{
+			font-family: Arial;
+			color: #696969;
+			text-align:center;
+		}
+		.log-button{
+			background-color: #555555;
+			border: none;
+			color: white;
+			width:100%;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			padding: 14px 20px;
+			margin: 8px 0;
+			cursor: pointer;
+		}
+
+	</style>
 </head>
 <body>
-<button class="button"> < </button>
+
 
 <form method="POST" action="">
 
 	{% csrf_token %}
 
-    <div class="container">
-        <h1> Login </h1>
-     <class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="text" name="username" placeholder="Username..." class="form-control">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-								<input type="password" name="password" placeholder="Password..." class="form-control" >
-						</div>
+	<div class="container">
+		<h1> Login </h1>
+		<div class="input-group mb-3">
+			<div class="input-group-append">
+				<span class="input-group-text"><i class="fas fa-user"></i></span>
+			</div>
+			<input type="text" name="username" placeholder="Username..." class="form-control">
+		</div>
+		<div class="input-group mb-2">
+			<div class="input-group-append">
+				<span class="input-group-text"><i class="fas fa-key"></i></span>
+			</div>
+			<input type="password" name="password" placeholder="Password..." class="form-control" >
+		</div>
 
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 				<input class="btn login_btn" type="submit" value="Login">
+		<div class="d-flex justify-content-center mt-3 login_container">
+			<input class="log-button" type="submit" value="Login">
+		</div>
 	</div>
 </form>
 
-	{% for message in messages %}
+{% for message in messages %}
 
-	<p id="messages">{{message}}</p>
+<p id="messages">{{message}}</p>
 
-	{% endfor %}
-	<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Hast Du noch keinen Account? <a href="{% url 'register' %}" class="ml-2">Registrieren</a>
-					</div>
-
+{% endfor %}
+<div class="mt-4">
+	<div class="account">
+		Hast Du noch keinen Account? <a href="{% url 'register' %}">Registrieren</a>
+	</div>
+</div>
 </body>
 </html>

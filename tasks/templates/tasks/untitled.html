@@ -1,9 +1,96 @@
-<h3>Tasks</h3>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
 
+    <style>
+        form {
+            border: 30px solid #F5FFFA;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        .log-button{
+            background-color: #555555;
+            border: none;
+            color: white;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+
+        .container {
+            padding: 16px;
+
+        }
+
+        label{
+            font-family: Arial;
+            color: #778899;
+        }
+
+        .button{
+            background-color: #555555;
+            border: none;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 8px 2px;
+            cursor: pointer;
+            font-family: Arial;
+        }
+
+        h1{
+            font-family: Arial;
+            color: #696969;
+            text-align:center;
+        }
+        .log-button{
+            background-color: #555555;
+            border: none;
+            color: white;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<a class="button" id= "logout" href="{% url 'login' task.id %}">Logout</a>
+
+<div class="container">
 <form method="POST" action="/">
+    <h1>Aufgaben</h1>
+
     {% csrf_token %}
     {{form}}
-    <input type="submit" name="Create Task">
+    <input class ="log-button "type="submit" name="Create Task">
 </form>
 
 {% for task in tasks %}
@@ -15,8 +102,14 @@
         <span>{{task}}</span>
         {% endif %}
 
-        <a href="{% url 'update' task.id %}">Update</a>
-        <a href="{% url 'delete' task.id %}">Delete</a>
+        <a class="button" href="{% url 'update' task.id %}">Update</a>
+        <a class="button" href="{% url 'delete' task.id %}">Löschen</a>
 
     </div>
 {% endfor %}
+
+</div>
+
+
+</body>
+</html>

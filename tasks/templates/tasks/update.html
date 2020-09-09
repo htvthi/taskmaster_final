@@ -1,9 +1,66 @@
-<h3>Update Task</h3>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+
+    <style>
+
+        h1{
+            font-family: Arial;
+            color: #696969;
+            text-align:center;
+        }
+
+        form {
+            border: 30px solid #F5FFFA;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        .log-button{
+            background-color: #555555;
+            border: none;
+            color: white;
+            width:100%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        label{
+            font-family: Arial;
+            color: #778899;
+    </style>
+</head>
+<body>
+
+
 
 <form method="POST" actions="">
-
-    {% csrf_token %}
-
-    {{form}}
-    <input type="submit" name="Update Task">
+    <div class="container">
+        <h1>Update Task</h1>
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" class="log-button" name="Update Task">
+    </div>
 </form>
+
+</body>
+</html>
