@@ -47,6 +47,7 @@
         label{
             font-family: Arial;
             color: #778899;
+        }
     </style>
 </head>
 <body>
@@ -55,7 +56,7 @@
 
 <form method="POST" actions="">
     <div class="container">
-        <h1>Update Task</h1>
+        <h1>Bearbeiten</h1>
         {% csrf_token %}
         {{form}}
         <input type="submit" class="log-button" name="Update Task">
