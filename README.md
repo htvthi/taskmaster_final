@@ -51,9 +51,9 @@ Ist der Login falsch, wird eine Fehlermeldung ausgegeben. Ist der Login erfolgre
 #### Registrierung
 
 Auf der Register Seiter legt man mit einem Usernamen, Emailadresse und dem Passwort, einen Account an. Ist das Passwort nicht sicher genug, bekommt man eine Fehlermeldung.
-Ist die Registrierung erfolgreich, kommt man auf die ???
+Ist die Registrierung erfolgreich, kommt man auf die Homepage
 
-#### Tasksseite 
+#### Homepage 
 
 Task können hier über ein Formular angelegt werden. Sind sie gespeichert, besteht die Möglichkeit über Buttons,  sie zu bearbeiten oder zu löschen. 
 Die Tasks sind in einer Datenbank gespeichert. 
