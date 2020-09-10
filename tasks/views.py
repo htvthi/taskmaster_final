@@ -34,8 +34,8 @@ def updateTask(request, pk):
     if request.method == 'POST':
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
-            form.save()
-        return redirect('home')
+                form.save()
+                return redirect('home')
 
     context = {'form':form}
     return render(request, 'tasks/update.html', context)
@@ -46,7 +46,7 @@ def deleteTask(request, pk):
 
     if request.method == 'POST':
         item.delete()
-    return redirect('home')
+        return redirect('home')
 
     context = {'item':item}
     return render(request, 'tasks/delete.html', context)

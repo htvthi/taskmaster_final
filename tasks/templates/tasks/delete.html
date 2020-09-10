@@ -60,15 +60,20 @@
 <body>
 
 
+<div class="container">
 <form method="POST" action="">
-    <div class="container">
+
         <h1>Löschen</h1>
     {% csrf_token %}
-    <input class ="log-button" type="submit" name=""confirm>
-    </div>
+    <input class ="log-button" type="submit" name="confirm">
+
 </form>
+</div>
 <div class="account">
-<p> "{{item}}" doch nicht löschen?</p>
-<a href="{%url 'home' %}">Zurück</a></div>
+    <p> "{{item}}" doch nicht löschen? </p>
+    <a href="{%url 'home' %}">Zurück</a>
+</div>
+
+
 </body>
 </html>

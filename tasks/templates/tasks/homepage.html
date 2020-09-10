@@ -75,21 +75,23 @@
             padding: 14px 20px;
             margin: 8px 0;
             cursor: pointer;
+            font-family: Arial;
         }
 
     </style>
 </head>
 <body>
 
-<a href="{% url 'logout' %}" class="ml-2">Ausloggen</a>
-
+<a href="{% url 'logout' %}" class="button">Ausloggen</a>
+<h1>Aufgaben</h1>
 <div class="container">
 <form method="POST" action="/">
-    <h1>Aufgaben</h1>
+
 
     {% csrf_token %}
     {{form}}
-    <input class ="log-button "type="submit" name="Create Task">
+    <a class ="log-button" href="{% url 'homepage' %}">Absenden</a>
+   <!-- <input class ="log-button "type="submit" name="Create Task">-->
 </form>
 
 {% for task in tasks %}
