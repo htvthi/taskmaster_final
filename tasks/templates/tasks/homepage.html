@@ -70,13 +70,10 @@
 <a href="{% url 'logout' %}" class="button">Ausloggen</a>
 <h1>Aufgaben</h1>
 <div class="container">
-<form method="POST" action="/">
-
-
+<form method="POST" action="">
     {% csrf_token %}
     {{form}}
-    <a class ="log-button" href="{% url 'home' %}">Absenden</a>
-   <!-- <input class ="log-button "type="submit" name="Create Task">-->
+    <input type="submit" name="Create Task">
 </form>
 
 {% for task in tasks %}
